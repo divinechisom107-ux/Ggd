@@ -15,7 +15,6 @@
         }
 
         .hero-background {
-            /* This pulls a high-quality image of a warehouse/cargo area */
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
@@ -86,6 +85,22 @@
 
         .header { background: #d9534f; color: white; padding: 25px; text-align: center; }
         
+        /* PROFILE PICTURE STYLING */
+        .profile-area {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d9534f;
+            margin-bottom: 10px;
+        }
+
         .info-list { padding: 10px 0; }
         
         .info-row {
@@ -132,6 +147,11 @@
                 <p id="display-id" style="opacity: 0.9;"></p>
             </div>
             
+            <div class="profile-area">
+                <img src="https://i.imgur.com/LikXk2x.jpeg" class="profile-pic" alt="Shipper Photo">
+                <div><span class="label">Primary Shipper</span><span class="value">Kaley Cuoco</span></div>
+            </div>
+
             <div class="info-list">
                 <div class="info-row">
                     <i class="fa-solid fa-box"></i>
