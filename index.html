@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: sans-serif; margin: 0; background: #f0f2f5; display: flex; justify-content: center; padding-top: 50px; }
+        .container { width: 90%; max-width: 400px; }
+        
+        /* SEARCH PAGE STYLING */
+        #search-page { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 12px; margin: 20px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #d9534f; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+        /* RESULT PAGE (Hidden by default) */
+        #result-page { display: none; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .header { background: #d9534f; color: white; padding: 20px; text-align: center; }
+        .info-row { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; gap: 15px; }
+        .info-row i { color: #d9534f; width: 25px; }
+        .label { display: block; font-size: 11px; color: #888; text-transform: uppercase; }
+        .value { display: block; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="search-page">
+        <i class="fa-solid fa-truck-fast fa-3x" style="color: #d9534f;"></i>
+        <h2>Track Your Parcel</h2>
+        <p>Enter your tracking number below</p>
+        <input type="text" id="trackInput" placeholder="Enter ID (e.g. TRK123...)">
+        <button onclick="showResult()">TRACK NOW</button>
+    </div>
+
+    <div id="result-page">
+        <div class="header">
+            <h3>Package Found</h3>
+            <p id="display-id"></p>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-money-bill-1-wave"></i>
+            <div><span class="label">Goods Type</span><span class="value">One hundred thousand euros</span></div>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-weight-hanging"></i>
+            <div><span class="label">Weight</span><span class="value">10.00 kg</span></div>
+        </div>
+        <div class="info-row">
+            <i class="fa-solid fa-user"></i>
+            <div><span class="label">Shipper</span><span class="value">Kaley Cuoco</span></div>
+        </div>
+        <button style="border-radius: 0;" onclick="location.reload()">Back to Search</button>
+    </div>
+</div>
+
+<script>
+    // THE "BRAIN" (JavaScript)
+    function showResult() {
+        var input = document.getElementById('trackInput').value;
+        if (input === "") {
+            alert("Please enter a tracking ID");
+            return;
+        }
+        
+        // Hide the search page
+        document.getElementById('search-page').style.display = 'none';
+        
+        // Show the result page
+        document.getElementById('result-page').style.display = 'block';
+        
+        // Display whatever ID the user typed
+        document.getElementById('display-id').innerText = "ID: " + input;
+    }
+</script>
+
+</body>
+</html>
